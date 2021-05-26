@@ -13,7 +13,7 @@ Distributions are displayed both in textual and graphical view.
 
 ### Launching
 Portable (does not need to be installed). 
-Download from [here](https://github.com/fnaumenko/RandomTest-WPF/releases/download/1.0.0/RandomTestWPF-Windows-x64.zip), 
+Download from [here](https://github.com/fnaumenko/RandomTest-WPF/releases/download/v1.0.0/RandomTestWPF-Windows-x64.zip), 
 unzip, go to the *RandomTestWPF* folder and and click on the file **RandomTestWPF.exe**
 
 ### Requirements
