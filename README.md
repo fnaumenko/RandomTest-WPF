@@ -1,4 +1,4 @@
-# RandomTest ![fig](RandomTestWPF_solution/RandomTestWPF/RandomTestWPF.ico)
+# RandomTest 
 Windows visual test of linear, normal and lognormal distributions based on different Random Number Generators (Windows, WPF).
 
 This is a WPF version of [RandomTest-WinForm](https://github.com/fnaumenko/RandomTest-Win)
@@ -14,7 +14,7 @@ Distributions are displayed both in textual and graphical view.
 ### Launching
 Portable (does not need to be installed). 
 Download from [here](https://github.com/fnaumenko/RandomTest-WPF/releases/download/1.0.0/RandomTestWPF-Windows-x64.zip), 
-unzip, go to the *RandomTest* folder and and click on the file **RandomTest.exe**
+unzip, go to the *RandomTestWPF* folder and and click on the file **RandomTestWPF.exe**
 
 ### Requirements
 Microsoft [.NET Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=17718) or higher.
