@@ -1,4 +1,4 @@
-# RandomTest 
+# RandomTest ![fig](RandomTestWPF_solution/RandomTestWPF/RandomTestWPF.ico)
 Windows visual test of linear, normal and lognormal distributions based on different Random Number Generators (Windows, WPF).
 
 This is a WPF version of [RandomTest-WinForm](https://github.com/fnaumenko/RandomTest-Win)
