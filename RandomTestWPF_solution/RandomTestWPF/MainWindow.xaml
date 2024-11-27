@@ -7,7 +7,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:RandomTestWPF"
         mc:Ignorable="d"
-        Title="Random Generator Test" Width="720" Height="532">
+        Title="Random Generator Test" Width="720" Height="592.334">
 
     <Window.Resources>
         <Style x:Key="CommonBackground">
@@ -127,12 +127,19 @@
                     </Border>
 
                     <Border>
-                        <Canvas Height="45" Style="{StaticResource PanelBackground}" >
+                        <Canvas Height="100" Style="{StaticResource PanelBackground}" >
                             <local:DistrParams x:Name="LNormParams" Title="Lognorm" Padding="2" IsChecked="true"
-					            Mean="5.46" IncrementMean="0.1" Sigma="0.4" IncrementSigma="0.1"
+					            Mean="5.25" IncrementMean="0.1" Sigma="0.3" IncrementSigma="0.1"
+                                SomeValueChanged="LNormParams_ValueChanged"
                                 ToolTip="Lognormal distribution parameters"/>
                             <CheckBox x:Name="chkBoxStdLnorm" Canvas.Left="85" Canvas.Top="2" Content="C std"
                                 ToolTip="Turn on/off C build-in implementation of lognormal distribution"/>
+                            <TextBlock Canvas.Left="6" TextWrapping="Wrap" Text="Mode:" Canvas.Top="44"/>
+                            <TextBlock x:Name="txtCalcMode" Text="0" Canvas.Left="45" Canvas.Top="44" />
+                            <TextBlock Canvas.Left="7" TextWrapping="Wrap" Text="Mean:" Canvas.Top="62"/>
+                            <TextBlock x:Name="txtCalcMean" Text="0" Canvas.Left="45" Canvas.Top="62" />
+                            <TextBlock Canvas.Left="7" TextWrapping="Wrap" Text="Median:" Canvas.Top="80"/>
+                            <TextBlock x:Name="txtCalcMedian" Text="0" Canvas.Left="55" Canvas.Top="80" />
                         </Canvas>
                     </Border>
 
@@ -172,7 +179,7 @@
 
                             <TabItem Header="Ranges">
                                 <TabItem.Content>
-                                    <StackPanel> 
+                                    <StackPanel>
                                         <local:AxisLimits x:Name="LimitsX" Title="X" Increment="10" Padding="2,4,0,3"
                                             ToolTip="X-axis autoadaption" />
                                         <local:AxisLimits x:Name="LimitsY" Title="Y" Increment="100" Padding="2,2,0,2" IsSkipped="False"

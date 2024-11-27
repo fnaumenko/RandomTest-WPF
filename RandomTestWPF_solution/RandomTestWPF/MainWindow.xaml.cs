@@ -70,6 +70,8 @@ namespace RandomTestWPF
             };
             LimitsIsEnabled = !(chkBoxAutoLim.IsChecked ?? false);
             lnSmoothness = chkBoxSpline.IsChecked == true ? 1 : 0;
+
+            PrintCalcLnParams();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -254,7 +256,15 @@ namespace RandomTestWPF
 
         #endregion
         #region View control
-        
+        private void PrintCalcLnParams()
+        {
+            float sigmaPower = LNormParams.Sigma * LNormParams.Sigma;
+
+            txtCalcMode.Text = ((float)Math.Exp(LNormParams.Mean - sigmaPower)).ToString("0.#");
+            txtCalcMean.Text = ((float)Math.Exp(LNormParams.Mean + sigmaPower / 2)).ToString("0.#");
+            txtCalcMedian.Text = ((float)Math.Exp(LNormParams.Mean)).ToString("0.#");
+        }
+
         private void chkBoxGrid_CheckedChanged(object sender, RoutedEventArgs e)
         {
             if (DataContext != null)
@@ -293,6 +303,12 @@ namespace RandomTestWPF
             extChartWidth = splitter.ActualWidth + ChartPanel.ActualWidth;
             this.Width -= extChartWidth;
             this.ResizeMode = ResizeMode.NoResize;
+        }
+
+        private void LNormParams_ValueChanged(object sender, EventArgs e)
+        {
+            if (txtCalcMode != null)    // during initialization TextBlocks 'txtCalc...' have not yet been created
+                PrintCalcLnParams();
         }
 
         #endregion

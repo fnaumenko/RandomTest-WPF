@@ -1,4 +1,4 @@
-﻿//using System;
+﻿using System;
 using System.Collections.Generic;
 //using System.Linq;
 //using System.Text;
@@ -20,11 +20,14 @@ namespace RandomTestWPF
     /// </summary>
     public partial class DistrParams : UserControl
     {
+        public event EventHandler SomeValueChanged;
 
         public DistrParams()
         {
             InitializeComponent();
             nmrMean.IsEnabled = nmrSD.IsEnabled = chkBoxActive.IsChecked ?? false;
+            nmrMean.ValueChanged += HandleSomeValueChanged;
+            nmrSD.ValueChanged += HandleSomeValueChanged;
         }
 
         public string Title {
@@ -45,7 +48,17 @@ namespace RandomTestWPF
         /// <summary>Get/set dependend controls to manage their enabling.</summary>
         public List<UIElement> DepControls { get; set; }
 
-         private void chkBoxActive_CheckedChanged(object sender, RoutedEventArgs e)
+        protected virtual void OnSomeValueChanged(EventArgs e)
+        {
+            this.SomeValueChanged?.Invoke(this, e);
+        }
+
+        private void HandleSomeValueChanged(object sender, EventArgs e)
+        {
+            OnSomeValueChanged(EventArgs.Empty);
+        }
+
+        private void chkBoxActive_CheckedChanged(object sender, RoutedEventArgs e)
         {
             bool newVal = nmrMean.IsEnabled = nmrSD.IsEnabled = 
                 (sender as CheckBox).IsChecked ?? false;
