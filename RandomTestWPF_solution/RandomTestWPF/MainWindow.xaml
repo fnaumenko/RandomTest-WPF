@@ -130,7 +130,7 @@
                         <Canvas Height="45" Style="{StaticResource PanelBackground}" >
                             <local:DistrParams x:Name="LNormParams" Title="Lognorm" Padding="2" IsChecked="true"
 					            Mean="5.46" IncrementMean="0.1" Sigma="0.4" IncrementSigma="0.1"
-                                ToolTip="Lognormal distribution parameters" Loaded="LNormParams_Loaded"/>
+                                ToolTip="Lognormal distribution parameters"/>
                             <CheckBox x:Name="chkBoxStdLnorm" Canvas.Left="85" Canvas.Top="2" Content="C std"
                                 ToolTip="Turn on/off C build-in implementation of lognormal distribution"/>
                         </Canvas>
