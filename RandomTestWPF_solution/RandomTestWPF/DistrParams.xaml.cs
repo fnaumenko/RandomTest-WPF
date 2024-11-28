@@ -36,12 +36,14 @@ namespace RandomTestWPF
         }
 
         public float Mean { get => nmrMean.Value ?? 0; set => nmrMean.Value = value; }
-
-        public float IncrementMean { get => nmrMean.Increment ?? 0; set => nmrMean.Increment = value; }
+        public float MeanMaximum { set => nmrMean.Maximum = value; }
+        public float MeanMinimum { set => nmrMean.Minimum = value; }
+        public float MeanIncrement { set => nmrMean.Increment = value; }
 
         public float Sigma { get => nmrSD.Value ?? 0; set => nmrSD.Value = value; }
-
-        public float IncrementSigma { get => nmrSD.Increment ?? 0; set => nmrSD.Increment = value; }
+        public float SigmaMaximum { set => nmrSD.Maximum = value; }
+        public float SigmaMinimum { set => nmrSD.Minimum = value; }
+        public float SigmaIncrement { set => nmrSD.Increment = value; }
 
         public bool? IsChecked { get => chkBoxActive.IsChecked; set => chkBoxActive.IsChecked = value; }
 
